@@ -1,0 +1,13 @@
+.movie-list {
+   .swiper-slide {
+      width: 19.3%;
+
+      @include tablet {
+         width: 30%;
+      }
+
+      @include mobile {
+         width: 40%;
+      }
+   }
+}

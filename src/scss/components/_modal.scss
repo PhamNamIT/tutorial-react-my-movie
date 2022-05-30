@@ -1,0 +1,53 @@
+.modal {
+   @include flex(center, center);
+   background-color: rgba($color: black, $alpha: .4);
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   opacity: 0;
+   overflow: auto;
+   visibility: hidden;
+   z-index: 100;
+
+   &.active {
+      opacity: 1;
+      visibility: visible;
+   }
+
+   &__content {
+      background-color: $body-bg;
+      padding: 2rem;
+      position: relative;
+      transform: translateY(-250px);
+      transition: transform .5s ease, opacity .5s ease;
+      opacity: 0;
+      width: 50%;
+
+      &__close {
+         position: absolute;
+         top: 5px;
+         right: 5px;
+         font-size: 1.5rem;
+         cursor: pointer;
+
+         &:hover {
+            color: $main-color;
+         }
+      }
+      
+      @include tablet {
+         width: 80%;
+      }
+
+      @include mobile {
+         
+      }
+   }
+
+   &.active &__content {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
